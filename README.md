@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). I am learning CRUD principles from the following tutorial (https://dev.to/gerwinjonathan/making-first-simple-crud-app-with-mern-stack-4o6k) and implementing each of the CRUD components in the components folder. 
 
 ## Available Scripts
 
