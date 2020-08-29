@@ -19,7 +19,6 @@ const CreateTask = (props) => {
 
     const submitData = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:3000/all_student/add', data).then(res => console.log(res.data));
         setData({
             task: "",
             date:"",
