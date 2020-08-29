@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Form, FormGroup, Label, Input, Col, Button } from 'reactstrap';
-import { AiOutlineUserAdd, AiOutlineUser, AiOutlineExport, AiOutlineForward } from 'react-icons/ai';
 import axios from 'axios';
 
 const CreateTask = (props) => {
@@ -11,14 +10,14 @@ const CreateTask = (props) => {
         importance: ""
     });
 
-    const onChangeStudentData = (e) => {
+    const changeTaskData = (e) => {
         setData({
             ...data,
             [e.target.name]: e.target.value
         })
     }
 
-    const onSubmitStudentData = (e) => {
+    const submitData = (e) => {
         e.preventDefault();
         axios.post('http://localhost:3000/all_student/add', data).then(res => console.log(res.data));
         setData({
@@ -32,7 +31,7 @@ const CreateTask = (props) => {
     return (
         <div style={{ marginTop: 10 }}>
             <h3> Create Task</h3>
-            <Form onSubmit={onSubmitStudentData}>
+            <Form onSubmit={submitData}>
                 <FormGroup row>
                     <Col>
                         <Label>Task </Label>
@@ -41,7 +40,7 @@ const CreateTask = (props) => {
                             name="task"
                             className="form-control"
                             value={data.task}
-                            onChange={onChangeStudentData} />
+                            onChange={changeTaskData} />
                     </Col>
                 </FormGroup>
                 <FormGroup row>
@@ -52,7 +51,7 @@ const CreateTask = (props) => {
                             name="date"
                             className="form-control"
                             value={data.date}
-                            onChange={onChangeStudentData} />
+                            onChange={changeTaskData} />
                     </Col>
                 </FormGroup>
                 <FormGroup row>
@@ -63,7 +62,7 @@ const CreateTask = (props) => {
                             name="desc"
                             className="form-control"
                             value={data.desc}
-                            onChange={onChangeStudentData} />
+                            onChange={changeTaskData} />
                     </Col>
                 </FormGroup>
                 <FormGroup row>
@@ -74,7 +73,7 @@ const CreateTask = (props) => {
                             name="importance"
                             className="form-control"
                             value={data.importance}
-                            onChange={onChangeStudentData} />
+                            onChange={changeTaskData} />
                     </Col>
                 </FormGroup>
                 <Button color="primary"> Submit</Button>
